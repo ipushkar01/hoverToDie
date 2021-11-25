@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+}
+body {
+    margin-top: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    border: none;
+    padding: 15px;
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    position: relative;
+}
+.button1{
+    background-color: black;
+}
+.button1::before {
+    content: "JOKING!";
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.button1::after {
+    content: "DON'T WORRY!";
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.button1:hover.button1::before {
+    animation: retrive 1s alternate forwards;
+}
+.button1:hover.button1::after {
+    animation: retrive 1s 1s alternate infinite;
+}
+
+@keyframes retrive {
+    to {
+        height: 100%;
+    }
+}
